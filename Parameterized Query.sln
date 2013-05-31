@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parameterized Query", "Parameterized Query\Parameterized Query.csproj", "{ED60B787-4F16-40A1-B1BA-9B13FF46F8BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parameterized Query Tests", "Parameterized Query Tests\Parameterized Query Tests.csproj", "{9C69CAE6-E4BC-41D6-A70F-35967475D9BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED60B787-4F16-40A1-B1BA-9B13FF46F8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED60B787-4F16-40A1-B1BA-9B13FF46F8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED60B787-4F16-40A1-B1BA-9B13FF46F8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED60B787-4F16-40A1-B1BA-9B13FF46F8BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C69CAE6-E4BC-41D6-A70F-35967475D9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C69CAE6-E4BC-41D6-A70F-35967475D9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C69CAE6-E4BC-41D6-A70F-35967475D9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C69CAE6-E4BC-41D6-A70F-35967475D9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
