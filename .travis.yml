@@ -9,4 +9,4 @@ env:
   - EnableNuGetPackageRestore=true
 script:
   - xbuild 
-  - ".ci/Parameterized Query.sh" /bin/Debug/build.dll
+ 
