@@ -1,12 +1,22 @@
 language: objective-c
 
+notifications:
+  email: false
+
 before_install:
  # Make sure mono is installed,
  - wget http://download.mono-project.com/archive/3.2.4/macos-10-x86/MonoFramework-MDK-3.2.4.macos10.xamarin.x86.pkg
  - sudo installer -pkg "./MonoFramework-MDK-3.2.4.macos10.xamarin.x86.pkg" -target /
+ - chmod 0777 nunit.sh 
+ # Download moma so we can check compatability with mono
+ #- wget http://www.go-mono.com/archive/moma/Moma2-8.zip
+ #- unzip Moma2-8.zip
 
 env:
   - EnableNuGetPackageRestore=true
 
 install:
+ - ls
  - xbuild 
+ #- run moma check
+ - ./nunit.sh "Parameterized Query Tests/bin/debug/Parameterized Query.dll"
