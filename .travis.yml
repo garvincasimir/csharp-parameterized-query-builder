@@ -10,4 +10,4 @@ env:
 
 install:
  - xbuild 
- - sudo ./nunit.sh "Parameterized Query Tests/bin/debug/Parameterized Query.dll"
+ - .ci/nunit.sh "Parameterized Query Tests/bin/debug/Parameterized Query.dll"
