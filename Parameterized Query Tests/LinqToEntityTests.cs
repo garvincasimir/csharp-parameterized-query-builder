@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using Parameterized_Query;
 using System;
 using System.Collections.Generic;
@@ -9,13 +9,13 @@ using System.Linq;
 
 namespace Parameterized_Query_Tests
 {
-    [TestClass]
+    [TestFixture]
     public class LinqToEntityTests
     {
         PersonContext context;
         string dbPath;
 
-        [TestInitialize]
+        [SetUp]
         public void Setup()
         {
             // file path of the database to create
@@ -50,13 +50,13 @@ namespace Parameterized_Query_Tests
    
         }
 
-        [TestCleanup]
+        [TearDown]
         public void Cleanup()
         {
             File.Delete(dbPath);
         }
 
-        [TestMethod]
+        [Test]
         public void TestStringSingleParamEquals()
         {
             var searchParams = new List<SearchParameter>
@@ -76,7 +76,7 @@ namespace Parameterized_Query_Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void TestStringSingleParamEqualsWithNoMatch()
         {
             var searchParams = new List<SearchParameter>
@@ -96,7 +96,7 @@ namespace Parameterized_Query_Tests
 
         }
 
-        [TestMethod]
+        [Test]
         public void TestStringMultipleParamEquals()
         {
             var searchParams = new List<SearchParameter>
@@ -121,7 +121,7 @@ namespace Parameterized_Query_Tests
             Assert.IsTrue(pq.Results().Count() == 1);
         }
 
-        [TestMethod]
+        [Test]
         public void TestDateSingleParamEquals()
         {
             var searchParams = new List<SearchParameter>
@@ -140,7 +140,7 @@ namespace Parameterized_Query_Tests
             Assert.IsTrue(pq.Results().Count() == 1);
         }
 
-        [TestMethod]
+        [Test]
         public void TestDateSingleParamEqualsWithNoMatch()
         {
             var searchParams = new List<SearchParameter>
@@ -159,7 +159,7 @@ namespace Parameterized_Query_Tests
             Assert.IsTrue(pq.Results().Count() == 0);
         }
 
-        [TestMethod]
+        [Test]
         public void TestDateSingleParamBetween()
         {
             var searchParams = new List<SearchParameter>
@@ -179,7 +179,7 @@ namespace Parameterized_Query_Tests
             Assert.IsTrue(pq.Results().Count() == 1);
         }
 
-        [TestMethod]
+        [Test]
         public void TestDateSingleParamBetweenNoMatch()
         {
             var searchParams = new List<SearchParameter>
