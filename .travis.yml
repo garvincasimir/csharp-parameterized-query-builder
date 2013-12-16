@@ -12,4 +12,4 @@ before_install:
   
   script:
   - xbuild 
-  - ".ci/Parameterized Query.sh" /bin/Debug/build.dll
+  - .ci/Parameterized Query.sh /bin/Debug/build.dll
