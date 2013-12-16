@@ -1,3 +1,4 @@
+[![Build Status](https://secure.travis-ci.org/garvincasimir/csharp-parameterized-query-builder.png)](http://travis-ci.org/garvincasimir/csharp-parameterized-query-builder)
 csharp-parameterized-query-builder
 ==================================
 
