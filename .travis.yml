@@ -1,5 +1,8 @@
 language: objective-c
 
+notifications:
+  email: false
+
 before_install:
  # Make sure mono is installed,
  - wget http://download.mono-project.com/archive/3.2.4/macos-10-x86/MonoFramework-MDK-3.2.4.macos10.xamarin.x86.pkg
