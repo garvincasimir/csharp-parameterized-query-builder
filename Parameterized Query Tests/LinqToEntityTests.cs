@@ -12,49 +12,8 @@ namespace Parameterized_Query_Tests
     [TestFixture]
     public class LinqToEntityTests
     {
-        PersonContext context;
-        string dbPath;
-
-        [SetUp]
-        public void Setup()
-        {
-            // file path of the database to create
-            dbPath = Path.GetTempFileName();
-            Console.WriteLine(dbPath);
-            // delete it if it already exists
-            if (File.Exists(dbPath))
-                File.Delete(dbPath);
-
-            // create the SQL CE connection string - this just points to the file path
-            string connectionString = "Datasource = " + dbPath;
-
-            // NEED TO SET THIS TO MAKE DATABASE CREATION WORK WITH SQL CE!!!
-            Database.DefaultConnectionFactory =
-                new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0");
-
-            context = new PersonContext(connectionString);
-          
-                // this will create the database with the schema from the Entity Model
-            context.Database.Create();
-
-            context.People.Add(new Person()
-            {
-                PersonID = 1,
-                FirstName = "John",
-                LastName = "James",
-                Children = 5,
-                DateOfBirth = DateTime.Parse("1/5/1970")
-            });
-
-            context.SaveChanges();
-   
-        }
-
-        [TearDown]
-        public void Cleanup()
-        {
-            File.Delete(dbPath);
-        }
+        PersonContext context = new PersonContext();
+       
 
         [Test]
         public void TestStringSingleParamEquals()
