@@ -12,7 +12,7 @@ namespace Parameterized_Query_Tests
     {
         public TestDBConfig()
             {
-                SetDefaultConnectionFactory(new LocalDbConnectionFactory("v11.0"));
+                SetDefaultConnectionFactory(new LocalDbConnectionFactory("v11.0", "Integrated Security=True; MultipleActiveResultSets=False;"));
                 SetDatabaseInitializer<PersonContext>(new TestDBInitializer());
             }
 
