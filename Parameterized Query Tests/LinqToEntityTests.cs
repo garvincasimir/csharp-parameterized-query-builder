@@ -13,6 +13,7 @@ namespace Parameterized_Query_Tests
     public class LinqToEntityTests
     {
         PersonContext context = new PersonContext();
+
        
 
         [Test]
