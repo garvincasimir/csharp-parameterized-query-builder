@@ -12,7 +12,7 @@ namespace Parameterized_Query_Tests
     {
         public TestDBConfig()
             {
-                SetDefaultConnectionFactory(new LocalDbConnectionFactory("v11.0", "Integrated Security=True;"));
+                SetDefaultConnectionFactory(new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0", "", @"Data Source=|DataDirectory|\test.sdf"));
                 SetDatabaseInitializer<PersonContext>(new TestDBInitializer());
             }
 
