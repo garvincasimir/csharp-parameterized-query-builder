@@ -19,7 +19,7 @@ namespace Parameterized_Query_Tests
         {
 
             #if __MonoCS__
-			    context = new PersonContext("server=127.0.0.1;database=mono;User Id=travis;");
+			    context = new PersonContext("server=127.0.0.1;database=mono_test;User Id=root;");
             #else
                 context = new PersonContext();
             #endif
