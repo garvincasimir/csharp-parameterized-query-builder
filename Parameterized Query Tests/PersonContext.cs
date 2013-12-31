@@ -10,6 +10,8 @@ namespace Parameterized_Query_Tests
     [DbConfigurationType(typeof(TestDBConfig))]
     public partial class PersonContext : DbContext
     {
+        public PersonContext(){}
+        public PersonContext(string connectionString): base(connectionString){ }
         public DbSet<Person> People { get; set; }
     }
 }

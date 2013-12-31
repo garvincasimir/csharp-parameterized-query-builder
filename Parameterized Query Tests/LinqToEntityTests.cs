@@ -12,9 +12,19 @@ namespace Parameterized_Query_Tests
     [TestFixture]
     public class LinqToEntityTests
     {
-        PersonContext context = new PersonContext();
+        PersonContext context;
 
-       
+        [SetUp]
+        public void setup()
+        {
+
+            #if __MonoCS__
+			    context = new PersonContext("server=127.0.0.1;database=mono;User Id=travis;");
+            #else
+                context = new PersonContext();
+            #endif
+
+        }
 
         [Test]
         public void TestStringSingleParamEquals()

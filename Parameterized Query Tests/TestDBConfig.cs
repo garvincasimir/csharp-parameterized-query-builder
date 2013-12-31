@@ -5,26 +5,42 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using MySql.Data.Entity;
+using System.Data.Common;
+
 
 namespace Parameterized_Query_Tests
 {
-    public class TestDBConfig :DbConfiguration
+    public class TestDBConfig : DbConfiguration
     {
         public TestDBConfig()
-            {
-                SetDefaultConnectionFactory(new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0", "", @"Data Source=|DataDirectory|\test.sdf"));
-                SetDatabaseInitializer<PersonContext>(new TestDBInitializer());
-            }
+        {
+            #if __MonoCS__
+			    base.AddDependencyResolver (new MySqlDependencyResolver ());
+			    base.SetProviderFactory (MySqlProviderInvariantName.ProviderName, new MySqlClientFactory ());
+			    base.SetProviderServices (MySqlProviderInvariantName.ProviderName, new MySqlProviderServices ());
+			    base.SetDefaultConnectionFactory (new MySqlConnectionFactory ());
+			    base.SetMigrationSqlGenerator (MySqlProviderInvariantName.ProviderName, () => new MySqlMigrationSqlGenerator());
+			    base.SetProviderFactoryResolver (new MySqlProviderFactoryResolver ());
+			    base.SetManifestTokenResolver (new MySqlManifestTokenResolver ());
+            #else
+                base.SetDefaultConnectionFactory(new LocalDbConnectionFactory("v11.0"));
+            #endif
+
+            SetDatabaseInitializer<PersonContext>(new TestDBInitializer());
+
+        }
 
 
-        
+
     }
 
     public class TestDBInitializer : DropCreateDatabaseAlways<PersonContext>
     {
         protected override void Seed(PersonContext context)
         {
-            
+
             context.People.Add(new Person()
             {
                 PersonID = 1,
