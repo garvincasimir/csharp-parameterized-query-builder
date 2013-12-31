@@ -43,6 +43,7 @@ namespace Parameterized_Query_Tests
 
             context.People.Add(new Person()
             {
+                PersonID = Guid.NewGuid(),
                 FirstName = "John",
                 LastName = "James",
                 Children = 5,

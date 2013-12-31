@@ -11,8 +11,7 @@ namespace Parameterized_Query_Tests
     public class Person
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PersonID { get; set; }
+        public Guid PersonID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
