@@ -7,7 +7,7 @@ before_install:
  # Make sure mono is installed,
  - wget http://download.mono-project.com/archive/3.2.4/macos-10-x86/MonoFramework-MDK-3.2.4.macos10.xamarin.x86.pkg
  - sudo installer -pkg "./MonoFramework-MDK-3.2.4.macos10.xamarin.x86.pkg" -target /
- - mysql -e 'create database mono;'
+ - mysql -e 'create database myapp_test;'
  - chmod 0777 nunit.sh 
 
 env:
