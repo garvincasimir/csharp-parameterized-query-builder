@@ -3,7 +3,7 @@
 #Setup database
 if [ "$DbServer" = "MariaDB" ]; then
    wget http://ftp.osuosl.org/pub/mariadb/mariadb-5.3.12/kvm-tarbake-jaunty-x86/mariadb-5.3.12.tar.gz
-   tar -xvzf mariadb-5.3.12.tar.gz
+   tar -xf mariadb-5.3.12.tar.gz
    cd mariadb-5.3.12
    ./configure 
    make
