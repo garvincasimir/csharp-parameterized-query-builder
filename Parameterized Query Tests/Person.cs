@@ -12,7 +12,9 @@ namespace Parameterized_Query_Tests
     {
         [Key]
         public Guid PersonID { get; set; }
+        [StringLength(100)]
         public string FirstName { get; set; }
+        [StringLength(100)]
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int Children { get; set; }
