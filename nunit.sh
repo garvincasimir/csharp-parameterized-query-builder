@@ -2,13 +2,9 @@
 
 #Setup database
 if [ "$DbServer" = "MariaDB" ]; then
-   wget http://ftp.osuosl.org/pub/mariadb/mariadb-5.3.12/kvm-tarbake-jaunty-x86/mariadb-5.3.12.tar.gz
-   tar -xf mariadb-5.3.12.tar.gz
-   cd mariadb-5.3.12
-   ./configure 
-   make
-   sudo make install
-   cd ..
+  brew update
+  brew install mariadb
+  mysql.server start
 else
     wget http://cdn.mysql.com/Downloads/MySQL-5.1/mysql-5.1.73-osx10.6-x86_64.dmg
     hdiutil attach -quiet "mysql-5.1.73-osx10.6-x86_64.dmg"
