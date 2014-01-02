@@ -2,9 +2,9 @@
 
 #Setup database
 if [ "$DbServer" = "MariaDB" ]; then
-  brew update
-  brew install mariadb
-  mysql.server start
+    wget http://lisas.de/~hakan/file/mariadb-5.1.49-osx10.6-x86.pkg
+    sudo installer -pkg mariadb-5.1.49-osx10.6-x86.pkg -target /
+    sudo /usr/local/mysql/bin/mysqld_safe &
 else
     wget http://cdn.mysql.com/Downloads/MySQL-5.1/mysql-5.1.73-osx10.6-x86_64.dmg
     hdiutil attach -quiet "mysql-5.1.73-osx10.6-x86_64.dmg"
