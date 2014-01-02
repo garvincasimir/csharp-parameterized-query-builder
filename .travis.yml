@@ -17,7 +17,9 @@ env:
     - EnableNuGetPackageRestore=true
   matrix:
     - DbServer=MySql
+    - DbServer=Mysql56
     - DbServer=MariaDB
+    
 install:
  - ls
  - xbuild 
