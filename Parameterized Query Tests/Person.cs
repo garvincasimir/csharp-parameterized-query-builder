@@ -11,7 +11,7 @@ namespace Parameterized_Query_Tests
     public class Person
     {
         [Key]
-        public Guid PersonID { get; set; }
+        public int PersonID { get; set; }
         [StringLength(100)]
         public string FirstName { get; set; }
         [StringLength(100)]
