@@ -5,7 +5,7 @@ if [ "$DbServer" = "MariaDB" ]; then
     brew update
     brew install mariadb
     mysql.server start
-elif ["$DbServer" = "Mysql56" ]; then
+elif [ "$DbServer" = "Mysql56" ]; then
     wget http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.15-osx10.7-x86.dmg
     hdiutil attach -quiet "mysql-5.6.15-osx10.7-x86.dmg"
     sudo installer -pkg "/Volumes/mysql-5.6.15-osx10.7-x86/mysql-5.6.15-osx10.7-x86.pkg" -target /
