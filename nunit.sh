@@ -4,20 +4,21 @@
 if [ "$DbServer" = "MariaDB" ]; then
     brew update > /dev/null
     brew install mariadb
-    sudo mysql.server start
+    mysql.server start
 elif [ "$DbServer" = "Mysql56" ]; then
     wget http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.15-osx10.7-x86.dmg
     hdiutil attach -quiet "mysql-5.6.15-osx10.7-x86.dmg"
     sudo installer -pkg "/Volumes/mysql-5.6.15-osx10.7-x86/mysql-5.6.15-osx10.7-x86.pkg" -target /
     sudo /usr/local/mysql/support-files/mysql.server start 
+    /usr/local/mysql/bin/mysqladmin -u root version
 else
     wget http://cdn.mysql.com/Downloads/MySQL-5.1/mysql-5.1.73-osx10.6-x86_64.dmg
     hdiutil attach -quiet "mysql-5.1.73-osx10.6-x86_64.dmg"
     sudo installer -pkg "/Volumes/mysql-5.1.73-osx10.6-x86_64/mysql-5.1.73-osx10.6-x86_64.pkg" -target /
     sudo /usr/local/mysql/bin/mysqld_safe &
+    /usr/local/mysql/bin/mysqladmin -u root version
 fi
 
-mysql -u root -e "select @@version"
 
 #get latest version of nuget
 curl -S -L  http://nuget.org/nuget.exe > .nuget/nuget.exe
