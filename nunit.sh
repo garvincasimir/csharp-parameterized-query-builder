@@ -16,7 +16,7 @@ else
     hdiutil attach -quiet "mysql-5.1.73-osx10.6-x86_64.dmg"
     sudo installer -pkg "/Volumes/mysql-5.1.73-osx10.6-x86_64/mysql-5.1.73-osx10.6-x86_64.pkg" -target /
     sudo /usr/local/mysql/bin/mysqld_safe &
-    /usr/local/mysql/bin/mysqladmin -u root version
+    telnet localhost 3306 #HAHA
 fi
 
 
